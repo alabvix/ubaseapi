@@ -1,4 +1,4 @@
-package br.com.alabvox.ubaseapi;
+package br.com.alabvix.ubaseapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class UbaseapiApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(UbaseapiApplication.class, args);
 	}
 
