@@ -2,6 +2,8 @@ package br.com.alabvix.ubaseapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication
 public class UbaseapiApplication {
@@ -9,6 +11,11 @@ public class UbaseapiApplication {
 	public static void main(String[] args) {
 
 		SpringApplication.run(UbaseapiApplication.class, args);
+	}
+
+	@Bean
+	public BCryptPasswordEncoder bCryptPasswordEncoder() {
+		return new BCryptPasswordEncoder();
 	}
 
 }
