@@ -28,8 +28,7 @@ public class UserService {
 
         logger.info("Singing up a new user with email: " + signUpUser.email);
 
-        // TODO: validate confirmed email and password
-        // TODO: check if the email already exists in the database, if yes, can't sign in the user
+        // TODO: validate confirmed password
 
         User user = new User(null,
                 signUpUser.name,
@@ -38,6 +37,8 @@ public class UserService {
 
         return userRepository.save(user);
     }
+
+
 
     public List<User> findAll() {
         return userRepository.findAll();
