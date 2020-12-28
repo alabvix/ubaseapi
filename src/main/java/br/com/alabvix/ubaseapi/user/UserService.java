@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -25,15 +26,13 @@ public class UserService {
     }
 
     public User signUp(SignUpUser signUpUser) {
-
         logger.info("Singing up a new user with email: " + signUpUser.email);
-
-        // TODO: validate confirmed password
 
         User user = new User(null,
                 signUpUser.name,
                 signUpUser.email,
-                bCryptPasswordEncoder.encode(signUpUser.password));
+                bCryptPasswordEncoder.encode(signUpUser.password),
+                new Date());
 
         return userRepository.save(user);
     }

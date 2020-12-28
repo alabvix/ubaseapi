@@ -6,13 +6,14 @@ import javax.validation.ConstraintValidatorContext;
 /**
  * Checks if email is equal to confirmed email.
  */
-public class ValidEmailConfirmedEmailValidator implements ConstraintValidator<ValidEmailConfirmedEmail, SignUpUser> {
+public class ConfirmedEmailValidator implements ConstraintValidator<ConfirmedEmail, SignUpUser> {
 
     @Override
-    public void initialize(ValidEmailConfirmedEmail constraintAnnotation) {}
+    public void initialize(ConfirmedEmail constraintAnnotation) {
+    }
 
     public boolean isValid(SignUpUser signUpUser, ConstraintValidatorContext context) {
-        return (signUpUser.email.equalsIgnoreCase(signUpUser.confirmEmail));
+        return signUpUser.email.equalsIgnoreCase(signUpUser.confirmEmail);
     }
 
 }

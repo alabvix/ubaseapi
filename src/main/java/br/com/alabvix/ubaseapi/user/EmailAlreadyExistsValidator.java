@@ -6,7 +6,7 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import java.util.Optional;
 
-public class EmailAlreadyExistsValidator implements ConstraintValidator<EmailAlreadyExists, SignUpUser> {
+public class EmailAlreadyExistsValidator implements ConstraintValidator<EmailAlreadyExists, String> {
 
     @Autowired
     private UserRepository repository;
@@ -14,8 +14,8 @@ public class EmailAlreadyExistsValidator implements ConstraintValidator<EmailAlr
     @Override
     public void initialize(EmailAlreadyExists constraintAnnotation) {}
 
-    public boolean isValid(SignUpUser signUpUser, ConstraintValidatorContext context) {
-        Optional<User> opUser = repository.findByEmail(signUpUser.email);
-        return (!opUser.isPresent());
+    public boolean isValid(String email, ConstraintValidatorContext context) {
+        Optional<User> opUser = repository.findByEmail(email);
+        return (opUser.isEmpty());
     }
 }

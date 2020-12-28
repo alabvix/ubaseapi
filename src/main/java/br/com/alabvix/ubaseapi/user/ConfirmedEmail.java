@@ -10,10 +10,10 @@ import java.lang.annotation.Target;
 /**
  * Checks if email is equal to confirmed email.
  */
-@Target(ElementType.TYPE)
+@Target({ ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = ValidEmailConfirmedEmailValidator.class)
-public @interface ValidEmailConfirmedEmail {
+@Constraint(validatedBy = ConfirmedEmailValidator.class)
+public @interface ConfirmedEmail {
     String message() default "Email and confirmed email must match";
 
     Class<?>[] groups() default {};

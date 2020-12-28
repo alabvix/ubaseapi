@@ -8,6 +8,8 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import java.util.Date;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
@@ -33,7 +35,8 @@ public class UserServiceUnitTest {
 
         User savedUser = new User("1213443455",
                 "Josh",
-                "josh@test.com", bCryptPasswordEncoder.encode("12345"));
+                "josh@test.com", bCryptPasswordEncoder.encode("12345"),
+                new Date());
         when(userRepository.save(Mockito.any(User.class))).thenReturn(savedUser);
 
         // given
