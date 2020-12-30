@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -21,11 +20,6 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping
-    public List<User> findAll() {
-        return userService.findAll();
-    }
-
     @PostMapping("/sign-up")
     public User signUp(@Valid @RequestBody SignUpUser signUpUser) {
        return userService.signUp(signUpUser);
@@ -34,8 +28,6 @@ public class UserController {
     /**
      * Get the validation error and return the validation
      * message to the client.
-     * @param ex
-     * @return
      */
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)

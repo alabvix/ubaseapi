@@ -2,8 +2,6 @@ package br.com.alabvix.ubaseapi.user;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
@@ -14,19 +12,14 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-
 public class SignUpUserValidationTest {
 
     private Validator validator;
-
-    @Mock
-    UserRepository userRepository;
 
     @BeforeEach
     public void beforeEach() {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         validator = factory.getValidator();
-        MockitoAnnotations.openMocks(this);
     }
 
     @Test
@@ -95,6 +88,5 @@ public class SignUpUserValidationTest {
         assertEquals(1, violations.size());
 
     }
-
 
 }
