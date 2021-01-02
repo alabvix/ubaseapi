@@ -12,10 +12,12 @@ public class UbaseapiApplication {
 
 		SpringApplication.run(UbaseapiApplication.class, args);
 	}
-
 	@Bean
 	public BCryptPasswordEncoder bCryptPasswordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
+
+
+
 
 }

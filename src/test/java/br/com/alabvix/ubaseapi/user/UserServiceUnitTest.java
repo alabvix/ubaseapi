@@ -53,7 +53,7 @@ public class UserServiceUnitTest {
         // then
         assertNotNull(user.id);
         assertEquals(signUpUser.email, user.email);
-        assertEquals(signUpUser.name, user.name);
+        assertEquals(signUpUser.username, user.username);
         assertNotNull(user.password);
         assertEquals(savedUser.password, user.password);
     }
