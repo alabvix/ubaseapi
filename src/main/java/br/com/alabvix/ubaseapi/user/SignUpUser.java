@@ -13,6 +13,7 @@ public class SignUpUser {
     @NotNull(message = "Name cannot be null", groups = UserDataValidationGroup.class)
     @NotEmpty(message = "Name cannot be empty", groups = UserDataValidationGroup.class)
     @NotBlank(message = "Name cannot be blank", groups = UserDataValidationGroup.class)
+    @UsernameAlreadyExists(groups = UserEmailValidationGroup.class)
     public final String username;
 
     @NotNull(message = "Email cannot be null", groups = UserDataValidationGroup.class)
