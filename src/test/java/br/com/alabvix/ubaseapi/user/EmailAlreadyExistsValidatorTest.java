@@ -14,6 +14,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 public class EmailAlreadyExistsValidatorTest {
@@ -39,7 +40,7 @@ public class EmailAlreadyExistsValidatorTest {
 
     @Test
     @DisplayName("Given an user with existent email then validation must fail")
-    public void isValid_existentPassword_mustFail() {
+    public void isValid_existentEmail_mustFail() {
 
         final String existentEmail = "testuser@test.com";
 
@@ -52,12 +53,13 @@ public class EmailAlreadyExistsValidatorTest {
         when(repository.findByEmail(anyString())).thenReturn(opUser);
 
         assertFalse(validator.isValid(existentEmail,constraintValidatorContext));
+        verify(repository).findByEmail(anyString());
 
     }
 
     @Test
     @DisplayName("Given an user with no existent email then validation must pass")
-    public void isValid_existentPassword_mustPass() {
+    public void isValid_existentEmail_mustPass() {
 
         final String existentEmail = "testuser@test.com";
 
@@ -65,6 +67,7 @@ public class EmailAlreadyExistsValidatorTest {
         when(repository.findByEmail(anyString())).thenReturn(opUser);
 
         assertTrue(validator.isValid(existentEmail,null));
+        verify(repository).findByEmail(anyString());
 
     }
 }

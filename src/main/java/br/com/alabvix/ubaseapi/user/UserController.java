@@ -2,6 +2,7 @@ package br.com.alabvix.ubaseapi.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,8 +22,9 @@ public class UserController {
     }
 
     @PostMapping("/sign-up")
-    public User signUp(@Valid @RequestBody SignUpUser signUpUser) {
-       return userService.signUp(signUpUser);
+    public ResponseEntity signUp(@Valid @RequestBody SignUpUser signUpUser) {
+        userService.signUp(signUpUser);
+        return new ResponseEntity(HttpStatus.CREATED);
     }
 
     /**
