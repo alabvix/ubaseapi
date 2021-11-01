@@ -1,5 +1,7 @@
-package br.com.alabvix.ubaseapi.user;
+package br.com.alabvix.ubaseapi.user.validation;
 
+import br.com.alabvix.ubaseapi.user.User;
+import br.com.alabvix.ubaseapi.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.validation.ConstraintValidator;

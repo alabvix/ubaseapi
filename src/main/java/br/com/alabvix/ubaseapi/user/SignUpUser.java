@@ -1,5 +1,7 @@
 package br.com.alabvix.ubaseapi.user;
 
+import br.com.alabvix.ubaseapi.user.validation.*;
+
 import javax.validation.GroupSequence;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;

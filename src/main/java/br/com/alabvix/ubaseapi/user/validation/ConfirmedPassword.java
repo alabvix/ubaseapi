@@ -1,4 +1,4 @@
-package br.com.alabvix.ubaseapi.user;
+package br.com.alabvix.ubaseapi.user.validation;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -7,13 +7,14 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target({ElementType.FIELD })
+@Target({ ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = EmailAlreadyExistsValidator.class)
-public @interface EmailAlreadyExists {
-    String message() default "Email already exists in the database";
+@Constraint(validatedBy = ConfirmedPasswordValidator.class)
+public @interface ConfirmedPassword {
+    String message() default "Password and confirmed password must match";
 
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
+
 }

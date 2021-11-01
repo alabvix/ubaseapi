@@ -1,5 +1,7 @@
 package br.com.alabvix.ubaseapi.user;
 
+import br.com.alabvix.ubaseapi.user.validation.UsernameAlreadyExists;
+import br.com.alabvix.ubaseapi.user.validation.UsernameAlreadyExistsValidator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

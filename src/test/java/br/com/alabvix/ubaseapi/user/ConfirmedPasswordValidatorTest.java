@@ -1,5 +1,7 @@
 package br.com.alabvix.ubaseapi.user;
 
+import br.com.alabvix.ubaseapi.user.validation.ConfirmedPassword;
+import br.com.alabvix.ubaseapi.user.validation.ConfirmedPasswordValidator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
