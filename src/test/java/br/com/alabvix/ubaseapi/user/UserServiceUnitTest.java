@@ -11,7 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 public class UserServiceUnitTest {
 
@@ -56,6 +56,9 @@ public class UserServiceUnitTest {
         assertEquals(signUpUser.username, user.username);
         assertNotNull(user.password);
         assertEquals(savedUser.password, user.password);
+
+        verify(userRepository, times(1)).save(Mockito.any(User.class));
+
     }
 
 }

@@ -14,7 +14,7 @@ import java.util.Optional;
 @Service
 public class UserService implements UserDetailsService {
 
-    Logger logger = LoggerFactory.getLogger(UserService.class);
+    final Logger logger = LoggerFactory.getLogger(UserService.class);
 
     private UserRepository userRepository;
 
